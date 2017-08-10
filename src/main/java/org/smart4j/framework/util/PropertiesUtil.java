@@ -1,4 +1,4 @@
-package org.smart4j.framework.helper;
+package org.smart4j.framework.util;
 
 
 import org.slf4j.Logger;

@@ -1,5 +1,6 @@
-package org.smart4j.framework.helper;
+package org.smart4j.framework.util;
 
+import javafx.beans.binding.NumberExpression;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,26 @@ public class CastUtil {
 
     public static double castDouble(Object obj){
         return castDouble(obj,0);
+    }
+
+    public static long castLong(Object obj, long defaultLong){
+        long longValue = defaultLong;
+        if (obj != null){
+            String s = castString(obj);
+            if (StringUtils.isNotEmpty(s)){
+                try {
+                    longValue = Long.valueOf(s);
+                } catch (NumberFormatException e){
+                    logger.error("cast long error",e);
+                }
+            }
+        }
+
+        return longValue;
+    }
+
+    public static long castLong(Object obj){
+        return castLong(obj,0);
     }
 
     public static boolean castBoolean(Object obj, boolean defaultBoolean){
