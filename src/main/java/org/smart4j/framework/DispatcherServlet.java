@@ -40,7 +40,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-        String requestMethod = request.getMethod();
+        String requestMethod = request.getMethod().toLowerCase();
         String requestPath = request.getPathInfo();
 
         Handler handler = ControllerHelper.getHandler(requestMethod,requestPath);
