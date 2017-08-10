@@ -1,6 +1,5 @@
 package org.smart4j.framework.util;
 
-import javafx.beans.binding.NumberExpression;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
