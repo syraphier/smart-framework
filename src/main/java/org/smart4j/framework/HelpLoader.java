@@ -8,12 +8,13 @@ public class HelpLoader {
         Class<?>[] classes = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };
 
         for (Class<?> cls : classes){
-            ClassUtil.loadClass(cls.getName(),false);
+            ClassUtil.loadClass(cls.getName(),true);
         }
     }
 }
